@@ -2,8 +2,15 @@
 var express = require('express');
 var app = express();
  
-app.get('/', function (req, res) {
-  res.send('Hello World');
+app.get('/member/:id', function (req, res) {
+
+  const fakeMember = {
+    id: req.params.id,
+    name: 'fake-member-name',
+    age: 30
+  };
+
+  res.send(fakeMember);
 });
  
 app.listen(3000);
